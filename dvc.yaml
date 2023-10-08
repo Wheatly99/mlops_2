@@ -34,3 +34,11 @@ stages:
     - train.seed
     outs:
     - models/dt.pkl
+  evaluate:
+    cmd: python3 scripts/model-learning/evaluate.py
+    deps:
+    - models/dt.pkl
+    - scripts/model-learning/evaluate.py
+    metrics:
+    - evaluate/score.json:
+        cache: false
