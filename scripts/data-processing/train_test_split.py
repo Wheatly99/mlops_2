@@ -11,7 +11,7 @@ params = yaml.safe_load(open("../../params.yaml"))["split"]
 
 p_split = params["split_ratio"]
 
-X = df[['Survived', 'Pclass', 'Sex', 'Age']]
+X = df[['Pclass', 'Sex', 'Age']]
 y = df.Survived
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = p_split, stratify=y)
