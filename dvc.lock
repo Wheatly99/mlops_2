@@ -60,8 +60,8 @@ stages:
     deps:
     - path: scripts/model-learning/dt.py
       hash: md5
-      md5: 36f3cceede85a87f582bb7d12c3af5ea
-      size: 561
+      md5: eb6af6a9673c1fd6332a18728c02960f
+      size: 549
     params:
       params.yaml:
         train.max_depth: 5
@@ -69,5 +69,5 @@ stages:
     outs:
     - path: models/dt.pkl
       hash: md5
-      md5: 210cad04d9b37bc5aeba7663a86909a2
-      size: 1881
+      md5: 19bb5d048f70db4eb25d639a269e8454
+      size: 5385

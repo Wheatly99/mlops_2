@@ -13,7 +13,7 @@ params = yaml.safe_load(open("../../params.yaml"))["train"]
 seed = params["seed"]
 max_depth = params["max_depth"]
 
-X = df[['Survived', 'Pclass', 'Sex', 'Age']]
+X = df[['Pclass', 'Sex', 'Age']]
 y = df.Survived
 
 dt = DecisionTreeClassifier(max_depth=max_depth, random_state=seed)
