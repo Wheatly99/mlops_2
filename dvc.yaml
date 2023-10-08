@@ -17,4 +17,11 @@ stages:
     - scripts/data-processing/text_to_numeric.py
     outs:
     - data/stage3
-
+  split:
+    cmd: python3 scripts/data-processing/train_test_split.py
+    deps:
+    - scripts/data-processing/train_test_split.py
+    params:
+    - split.split_ratio
+    outs:
+    - data/stage4

@@ -39,3 +39,19 @@ stages:
       md5: d24199aae884c5c0505fbfc2acc58a15.dir
       size: 12071
       nfiles: 1
+  split:
+    cmd: python3 scripts/data-processing/train_test_split.py
+    deps:
+    - path: scripts/data-processing/train_test_split.py
+      hash: md5
+      md5: 8208710c3135d536b0180a7f662a5325
+      size: 682
+    params:
+      params.yaml:
+        split.split_ratio: 0.3
+    outs:
+    - path: data/stage4
+      hash: md5
+      md5: ea1b9a09763e0e9ab4adfc2141d4e671.dir
+      size: 13895
+      nfiles: 2
