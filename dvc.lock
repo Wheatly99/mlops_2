@@ -1,0 +1,41 @@
+schema: '2.0'
+stages:
+  fill-na:
+    cmd: python3 scripts/data-processing/fill_na.py
+    deps:
+    - path: scripts/data-processing/fill_na.py
+      hash: md5
+      md5: 658a75aaea027664be800e258cd468a8
+      size: 291
+    outs:
+    - path: data/stage2
+      hash: md5
+      md5: bb0e08a218a0554ae1a4802f14ac3ef9.dir
+      size: 15372
+      nfiles: 1
+  get-features:
+    cmd: python3 scripts/data-processing/get_features.py
+    deps:
+    - path: scripts/data-processing/get_features.py
+      hash: md5
+      md5: a512374e296bc4392bcb63ab050780bb
+      size: 283
+    outs:
+    - path: data/stage1
+      hash: md5
+      md5: 29ace838b381a16902a522c51970e88a.dir
+      size: 12363
+      nfiles: 1
+  text-to-numeric:
+    cmd: python3 scripts/data-processing/text_to_numeric.py
+    deps:
+    - path: scripts/data-processing/text_to_numeric.py
+      hash: md5
+      md5: 352a2d5931ec9942869a2f44d45fb69f
+      size: 352
+    outs:
+    - path: data/stage3
+      hash: md5
+      md5: d24199aae884c5c0505fbfc2acc58a15.dir
+      size: 12071
+      nfiles: 1
