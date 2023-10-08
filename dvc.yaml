@@ -25,3 +25,12 @@ stages:
     - split.split_ratio
     outs:
     - data/stage4
+  train:
+    cmd: python3 scripts/model-learning/dt.py
+    deps:
+    - scripts/model-learning/dt.py
+    params:
+    - train.max_depth
+    - train.seed
+    outs:
+    - models/dt.pkl

@@ -55,3 +55,19 @@ stages:
       md5: ea1b9a09763e0e9ab4adfc2141d4e671.dir
       size: 13895
       nfiles: 2
+  train:
+    cmd: python3 scripts/model-learning/dt.py
+    deps:
+    - path: scripts/model-learning/dt.py
+      hash: md5
+      md5: 36f3cceede85a87f582bb7d12c3af5ea
+      size: 561
+    params:
+      params.yaml:
+        train.max_depth: 5
+        train.seed: 42
+    outs:
+    - path: models/dt.pkl
+      hash: md5
+      md5: 210cad04d9b37bc5aeba7663a86909a2
+      size: 1881
